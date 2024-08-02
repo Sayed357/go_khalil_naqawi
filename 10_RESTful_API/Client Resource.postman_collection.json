@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "4385deff-9ba7-4c15-841e-32719ec37d6b",
+		"name": "Client Resource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37378916"
+	},
+	"item": [
+		{
+			"name": "Delete client",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/client/7?",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"client",
+						"7"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null,
+							"description": "Success delete"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Client",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/client/7?",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"client",
+						"7"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null,
+							"description": "Successful Operation"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get client by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add new client",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://virtserver.swaggerhub.com/sepulsa/RentABook-API/1.0.0/client?",
+					"protocol": "https",
+					"host": [
+						"virtserver",
+						"swaggerhub",
+						"com"
+					],
+					"path": [
+						"sepulsa",
+						"RentABook-API",
+						"1.0.0",
+						"client"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": null,
+							"description": "successful operation"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
