@@ -56,12 +56,17 @@ func main() {
 			})
 		}
 
+		if wordReq.Word == "" {
+			return c.JSON(http.StatusBadRequest, map[string]string{
+				"message": "failed to add word data",
+			})
+		}
+
 		word := wordReq.Word
 		length := len(word)
 		numOfVocals := countVowels(word)
 		palindrome := isPalindrome(word)
 
-		// insert new word with mutex lock
 		mu.Lock()
 		words = append(words, word)
 		mu.Unlock()
