@@ -8,7 +8,7 @@ type NutritionalData struct {
 	Calories      int `json:"calories"`
 	Fat           int `json:"fat"`
 	Sugar         int `json:"sugar"`
-	Carbohadrates int `json:"carbohydrates"`
+	Carbohydrates int `json:"carbohydrates"`
 	Protein       int `json:"protein"`
 }
 

@@ -1,4 +1,4 @@
-module fruit-api
+module go-fruit-api
 
 go 1.22.4
 

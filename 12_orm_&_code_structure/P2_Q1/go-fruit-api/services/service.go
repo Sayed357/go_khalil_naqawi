@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"fruit-api/models"
+	"go-fruit-api/models"
 	"net/http"
 
 	"github.com/google/uuid"

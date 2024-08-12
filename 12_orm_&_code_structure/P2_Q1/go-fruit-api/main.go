@@ -1,24 +1,22 @@
 package main
 
 import (
-	"database/sql"
 	"go-fruit-api/controllers"
+	"go-fruit-api/database"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var db *sql.DB
-
 func main() {
 	router := gin.Default()
 
-	db, _ = sql.Open("sqlite3", "./fruits.db")
+	database.Initdatabase()
 
 	router.GET("/api/v1/fruits", controllers.GetFruits)
 	router.GET("/api/v1/fruits/:id", controllers.GetFruitByID)
 	router.POST("/api/v1/fruits", controllers.CreateFruit)
-	router.DELETE("/api/v1/fruits/:id", controllers.DeleteFruit)
+	//router.DELETE("/api/v1/fruits/:id", controllers.DeleteFruit)
 
-	router.Run(":2313")
+	router.Run(":1323")
 }

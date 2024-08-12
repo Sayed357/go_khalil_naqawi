@@ -2,16 +2,17 @@ package controllers
 
 import (
 	"database/sql"
-	"fruit-api/models"
-	"fruit-api/services"
+	"go-fruit-api/database"
+	"go-fruit-api/models"
+	"go-fruit-api/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-func GetFruits(c *gin.Context, db *sql.DB) {
+func GetFruits(c *gin.Context) {
 	var fruits []models.Fruit
-	rows, err := db.Query("SELECT * FROM fruits")
+	rows, err := database.DB.Query("SELECT * FROM fruits")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to query fruits"})
 		return
@@ -35,10 +36,10 @@ func GetFruits(c *gin.Context, db *sql.DB) {
 	c.JSON(http.StatusOK, fruits)
 }
 
-func GetFruitByID(c *gin.Context, db *sql.DB) {
+func GetFruitByID(c *gin.Context) {
 	id := c.Param("id")
 	var fruit models.Fruit
-	row := db.QueryRow("SELECT * FROM fruits WHERE id = ?", id)
+	row := database.DB.QueryRow("SELECT * FROM fruits WHERE id = ?", id)
 	err := row.Scan(&fruit.ID, &fruit.Name, &fruit.Price, &fruit.NutritionalData.Calories, &fruit.NutritionalData.Fat, &fruit.NutritionalData.Sugar, &fruit.NutritionalData.Carbohydrates, &fruit.NutritionalData.Protein)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -52,7 +53,7 @@ func GetFruitByID(c *gin.Context, db *sql.DB) {
 	c.JSON(http.StatusOK, fruit)
 }
 
-func CreateFruit(c *gin.Context, db *sql.DB) {
+func CreateFruit(c *gin.Context) {
 	var fruitInput struct {
 		Name  string `json:"name" binding:"required"`
 		Price int    `json:"price" binding:"required,gt=0"`
@@ -63,7 +64,7 @@ func CreateFruit(c *gin.Context, db *sql.DB) {
 		return
 	}
 
-	fruit, err := services.AddFruit(db, fruitInput.Name, fruitInput.Price)
+	fruit, err := services.AddFruit(database.DB, fruitInput.Name, fruitInput.Price)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
