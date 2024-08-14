@@ -1,4 +1,4 @@
-# client-data-api
+# client-data
 
 REST API Application for managing contents. Written in Go with Echo Framework
 

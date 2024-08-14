@@ -1,8 +1,7 @@
 package database
 
 import (
-	"client-data-api/models"
-	"client-data-api/utils"
+	"client-data/models"
 	"fmt"
 	"log"
 
@@ -13,14 +12,14 @@ import (
 var DB *gorm.DB
 
 var (
-	DB_USERNAME string = utils.GetConfig("DB_USERNAME")
-	DB_PASSWORD string = utils.GetConfig("DB_PASSWORD")
-	DB_NAME     string = utils.GetConfig("DB_NAME")
-	DB_HOST     string = utils.GetConfig("DB_HOST")
-	DB_PORT     string = utils.GetConfig("DB_PORT")
+	DB_USERNAME string = "root"
+	DB_PASSWORD string = ""
+	DB_NAME     string = "clientdata_db"
+	DB_HOST     string = "localhost"
+	DB_PORT     string = "3306"
 )
 
-func InitDB() {
+func Initdatabase() {
 	var err error
 
 	var dsn string = fmt.Sprintf(
@@ -35,10 +34,10 @@ func InitDB() {
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
-		log.Fatalf("error when connecting to the database: %s\n", err)
+		log.Fatalf("error connecting to the database: %s\n", err)
 	}
 
-	log.Println("connected to the database")
+	log.Println("successfully connected to the database")
 
 	Migrate()
 }
@@ -47,7 +46,7 @@ func Migrate() {
 	err := DB.AutoMigrate(&models.User{}, &models.Category{}, &models.Content{})
 
 	if err != nil {
-		log.Fatalf("error when migration: %s\n", err)
+		log.Fatalf("error when migrating: %s\n", err)
 	}
 
 	log.Println("migration successful")

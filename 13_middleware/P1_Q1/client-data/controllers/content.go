@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"client-data-api/models"
-	"client-data-api/services"
+	"client-data/models"
+	"client-data/services"
 	"net/http"
 
 	"github.com/labstack/echo/v4"

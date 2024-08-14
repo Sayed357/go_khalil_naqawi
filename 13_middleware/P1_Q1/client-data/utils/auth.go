@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"client-data-api/middlewares"
-	"client-data-api/models"
+	"client-data/middlewares"
+	"client-data/models"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"

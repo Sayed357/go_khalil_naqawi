@@ -1,10 +1,10 @@
 package routes
 
 import (
-	"client-data-api/controllers"
-	"client-data-api/middlewares"
-	"client-data-api/models"
-	"client-data-api/utils"
+	"client-data/controllers"
+	"client-data/middlewares"
+	"client-data/models"
+	"client-data/utils"
 
 	echojwt "github.com/labstack/echo-jwt/v4"
 	"github.com/labstack/echo/v4"

@@ -1,6 +1,6 @@
 package repositories
 
-import "client-data-api/models"
+import "client-data/models"
 
 type ContentRepository interface {
 	GetAll() ([]models.Content, error)

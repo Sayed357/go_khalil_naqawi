@@ -1,14 +1,14 @@
 package main
 
 import (
-	"client-data-api/database"
-	"client-data-api/routes"
+	"client-data/database"
+	"client-data/routes"
 
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
-	database.InitDB()
+	database.Initdatabase()
 
 	e := echo.New()
 

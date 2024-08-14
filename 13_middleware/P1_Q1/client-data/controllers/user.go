@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"client-data-api/middlewares"
-	"client-data-api/models"
-	"client-data-api/services"
+	"client-data/middlewares"
+	"client-data/models"
+	"client-data/services"
 	"net/http"
 	"strconv"
 

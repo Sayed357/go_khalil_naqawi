@@ -1,8 +1,8 @@
 package services
 
 import (
-	"client-data-api/models"
-	"client-data-api/repositories"
+	"client-data/models"
+	"client-data/repositories"
 )
 
 type ContentService struct {

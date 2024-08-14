@@ -1,9 +1,9 @@
 package services
 
 import (
-	"client-data-api/models"
-	"client-data-api/repositories"
-	"client-data-api/utils"
+	"client-data/models"
+	"client-data/repositories"
+	"client-data/utils"
 )
 
 type UserService struct {

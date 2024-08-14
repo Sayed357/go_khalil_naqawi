@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"client-data-api/database"
-	"client-data-api/models"
+	"client-data/database"
+	"client-data/models"
 
 	"golang.org/x/crypto/bcrypt"
 )
